@@ -26,6 +26,7 @@ for row in cur:
     if lat==0 or lng==0: continue
 
     where=js['results'][0]['formatted_address']
+    where = where.replace("'", "")
 
     count=count+1
     if count>1:

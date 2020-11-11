@@ -26,9 +26,8 @@ for line in fh:
     else :
         cur.execute('Update Counts Set count=count+1 where org=?',(org,))
 
-    if i%10==0:
-        conn.commit()
 
+conn.commit()
 sqlstr='Select * from counts Order By count Desc Limit 10'
 for row in cur.execute(sqlstr):
     print (str(row[0]), row[1])
